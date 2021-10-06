@@ -1,18 +1,52 @@
 //displays a message to the user
-function displayMessage() {
+function getNumbers() {
+    let startValue = 0;
+    let endValue = 100;
 
-    let msg = "";
+    startValue = document.getElementById("startValue").value;
+    endValue = document.getElementById("endValue").value;
 
-    msg = document.getElementById("message").value;
+    startValue = parseInt(startValue);
+    endValue = parseInt(endValue);
 
-    alert(msg);
+    if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+        let numbers = generateNumbers(startValue, endValue);
+        displayNumbers(numbers)
+
+
+    } else {
+
+    }
 }
 
-function displayMessage2() {
+function generateNumbers(startValue, endValue) {
 
-let msg = "";
+    //generate the array
+    let numbers = [];
+    for (let index = startValue; index <= endValue; index++) {
 
-msg = document.getElementById("message").value;
+        numbers.push(index);
+    }
+    return numbers;
+}
+function displayNumbers(numbers) {
 
-Swal.fire(msg)
+    let startValue = numbers[0];
+    let endIndex = numbers.length;
+    let tableBody = document.getElementById("results");
+    tableBody.innerHTML = "";
+
+    for (let index = 0; index < endIndex; index++) {
+        let number = numbers[index];
+
+        if (number % 2 == 0) {
+
+            tableRow = `<tr><td class="evenDisplay">${number}</td> </tr>`;
+
+        } else {
+            tableRow = `<tr><td>${number}</td></tr>`;
+        }
+        tableBody.innerHTML += tableRow;
+    }
+
 }
