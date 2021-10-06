@@ -23,30 +23,47 @@ function generateNumbers(startValue, endValue) {
 
     //generate the array
     let numbers = [];
-    for (let index = startValue; index <= endValue; index++) {
 
-        numbers.push(index);
+    for (let index = 1; index <= 100; index++) {
+        let Value = ((index % val1 == 0 ? 'Fizz' : '') + (index % val2 == 0 ? 'Buzz' : '') || index);
+        returnArray.push(value);
     }
-    return numbers;
+    return returnArray;
 }
-function displayNumbers(numbers) {
 
-    let startValue = numbers[0];
-    let endIndex = numbers.length;
+function displayData(fbData) {
+
+    //get the Table Body element from the page
     let tableBody = document.getElementById("results");
+
+    //get the template to make the table
+    let rowTemplate = document.getElementById("fbTemplate");
+
+    //clear table first
     tableBody.innerHTML = "";
 
-    for (let index = 0; index < endIndex; index++) {
-        let number = numbers[index];
+    for (let index = 0; index < fbData.length; index += 5) {
+        const tableRow = documnet.importNode(rowTemplate.content, true);
 
-        if (number % 2 == 0) {
+        rowCols = tableRow.querySelectorAll("td");
 
-            tableRow = `<tr><td class="evenDisplay">${number}</td> </tr>`;
+        rowCols[0].classList.add(fbData[i]);
+        rowCols[0].textContent = fbData[i];
 
-        } else {
-            tableRow = `<tr><td>${number}</td></tr>`;
-        }
-        tableBody.innerHTML += tableRow;
+        rowCols[0].classList.add(fbData[i+1]);
+        rowCols[0].textContent = fbData[i+1];
+
+        rowCols[0].classList.add(fbData[i+2]);
+        rowCols[0].textContent = fbData[i+2];
+
+        rowCols[0].classList.add(fbData[i+3]);
+        rowCols[0].textContent = fbData[i+3];
+
+        rowCols[0].classList.add(fbData[i+4]);
+        rowCols[0].textContent = fbData[i+4];
+
+        tableBody.appendChild(tableRow);
+
     }
 
 }
