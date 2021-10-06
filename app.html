@@ -29,7 +29,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" src="/img/Wwlogo.png" href="index.html">FizzBuzz</a>
+                        <a class="nav-link active" aria-current="page" src="/img/Wwlogo.png"
+                            href="index.html">FizzBuzz</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="app.html">The App</a>
@@ -54,18 +55,18 @@
             <div class="row row-cols-1">
                 <div class="col">
                     <h1>FizzBuzz</h1>
-                    <h2 class="lead"> coding/> energy in a can!</h2>
+                    <h2 class="lead"> &lt;coding/> energy in a can!</h2>
                     <h4 class="mt-5 border-bottom border-3">A Coding Challege</h4>
                     <h5>Enter Values</h5>
                     <form>
                         <div class="row">
                             <div class="col">
-                                <input id="startValue" type="fbData" class="form-control" placeholder="Start Value"
-                                    value=0 aria-label="Start Value">
+                                <input id="startValue" type="fbData" class="form-control" placeholder="Fizz Value"
+                                    value=3 aria-label="Start Value">
                             </div>
-                            <div class="row">
-                                <input id="endValue" type="fbData" class="form-control" placeholder="End Value"
-                                    value=100 aria-label="End Value">
+                            <div class="col">
+                                <input id="endValue" type="fbData" class="form-control" placeholder="Buzz Value"
+                                    value=5 aria-label="End Value">
                             </div>
                             <div class="col-12 d-flex">
                                 <button id="btnSubmit" type="button" class="btn btn-dark btn-lg">FizzBuzz!</button>
@@ -74,7 +75,9 @@
                     </form>
                 </div>
                 <div class="col">
-                    <table id="results"></table>
+                    <table class="table table-striped">
+                        <tbody id="results"></tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -103,6 +106,15 @@
             </div>
         </div>
     </footer>
+    <template id="fbTemplate">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
